@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+
+/*css properties for customized scrollbar*/
+::-webkit-scrollbar {
+    width: 1.6vw;
+    background-color: #C9CAC6;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #C9CAC6;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #092c95);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 1px dashed #092c95;
+}
+
+/*css properties for navigation bar*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #c9cac6c9;
+    padding: 0px 3% 0px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/*css properties for LOGO*/
+.logo img {
+    width: 220px;
+    height: auto;
+    padding: 5px 20px;
+}
+
+
+/*css properties for content on nav bar*/
+.navigation ul {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.navigation ul li {
+    position: relative;
+    float: left;
+}
+
+.navigation a {
+    font-size: 18px;
+    padding: 20px;
+    color: #8d8c80;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: block;
+}
+
+.navigation a:hover {
+    background-color: #8d8c80;
+    color: #FFFEF9;
+}
+
+.navigation .members {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    background: #c9cac6db;
+    color: #FFFEF9;
+    display: none;
+}
+
+.members li {
+    width: 100%;
+    border-top: 1px solid #5a5950;
+}
+
+.navigation ul li:hover>ul {
+    display: initial;
+}
+
+#icon {
+    display: none;
+}
+
+header label {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #8d8c80;
+    cursor: pointer;
+    display: none;
+}
+
+/*css properties to make nav bar responsive*/
+@media(max-width:890px) {
+    header {
+        padding: 10px
+    }
+
+    header label {
+        display: initial;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fdfefbbf;
+        border-top: 1px solid #5a5950;
+        display: none;
+    }
+
+    .navigation ul li {
+        width: 100%;
+    }
+
+    .navigation .members {
+        position: relative;
+        width: 100%;
+    }
+
+    .navigation .members li {
+        background: #fdfefba4;
+    }
+
+    #icon:checked~.navigation {
+        display: inline;
+    }
+}
+
+/*css properties for MAIN CONTENT Section*/
+#members-bg {
+    background-image: url("img-bg/members-bgcover.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.members-content {
+    display: grid;
+    height: 100vh;
+    gap: 0.9rem;
+    padding: 0.9rem;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: 1.8fr 1fr;
+    grid-template-rows: 0.1fr 0.4fr 1fr 0.1fr 0.1fr 1fr 0.2fr;
+    grid-template-areas:
+        "space space"
+        "membersTitle members-pic"
+        "main-info members-pic"
+        "space2 space2"
+        "moreTitle moreTitle"
+        "moreVideo moreVideo"
+        "yt-link yt-link";
+}
+
+/*spacing between contents*/
+.space {
+    grid-area: space;
+}
+.space2 {
+    grid-area: space2;
+}
+
+
+/*css properties for members photos*/
+.members-pic {
+    grid-area: members-pic;
+    display: grid;
+    place-items: center;
+
+}
+
+.members-pic img {
+    height: 80vh;
+}
+
+
+/*css properties for title*/
+.membersTitle {
+    grid-area: membersTitle;
+}
+
+.membersTitle img {
+    width: 40vw;
+    padding: 0px 0px 0px 90px;
+}
+
+
+/*css properties for main information*/
+.main-info {
+    grid-area: main-info;
+}
+
+.main-info p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+    padding: 0px 100px;
+    color: #9ea096;
+    margin-bottom: 20px;
+}
+
+
+/*css properties for more content*/
+/*css properties for title*/
+.moreTitle {
+    grid-area: moreTitle;
+    display: grid;
+    place-items: center;
+}
+
+.moreTitle img {
+    width: 40vw;
+}
+
+/*css properties for video content*/
+.moreVideo {
+    grid-area: moreVideo;
+    display: grid;
+    place-items: center;
+}
+
+.moreVideo video {
+    width: 60vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px #9d9f9a;
+}
+
+/*css properties for button*/
+.yt-link {
+    grid-area: yt-link;
+    display: grid;
+    place-items: center;
+}
+
+.yt-link a {
+    font-weight: 500;
+    color: #092c95;
+    padding: 20px 40px;
+    border: 2px solid #092c95;
+    border-radius: 40px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.yt-link a:hover {
+    background-color: #092c95;
+    color: #FFFEF9;
+}
+
+
+/*css properties to make MAIN CONTENT Section responsive*/
+@media only screen and (max-width:790px) {
+    .members-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.2fr 0.1fr 0.1fr 30px 100px 0.1fr;
+        grid-template-areas:
+            "space"
+            "membersTitle"
+            "members-pic"
+            "main-info"
+            "space2"
+            "moreTitle"
+            "moreVideo"
+            "yt-link";
+    }
+
+    .membersTitle {
+        display: grid;
+        place-items: center;
+    }
+
+    .members-pic img {
+        height: 50vh;
+    }
+    .membersTitle img {
+        width: 50vw;
+        padding: 0px;
+    }
+    .main-info p {
+        font-size: 16px;
+        padding:0px 10px;
+    }
+
+    .moreTitle{
+        display: grid;
+        place-items: center;
+    }
+    .moreTitle img {
+        width: 60vw;
+    }
+    .moreVideo video{
+        width: 80vw;
+    }
+
+}
