@@ -1,4 +1,4 @@
-# hannahbustos.github.io
+# hannahkaith.github.io
 The purpose of this website was to complete an assessment!
 
 It was a project in which we had to build an interactive website by choosing one of the themes provided!
