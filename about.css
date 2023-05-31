@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+
+/*css properties for customized scrollbar*/
+::-webkit-scrollbar{
+    width: 1.6vw;
+    background-color: #C9CAC6;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #C9CAC6;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, #092c95);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border: 1px dashed #092c95;
+}
+
+/*css properties for navigation bar*/
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    right:0;
+    background: #fdfefbed;
+    padding:0px 3% 0px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header:hover{
+    background: #fdfefbbf;
+}
+
+/*css properties for LOGO*/
+.logo img{
+    width: 220px;
+    height: auto;
+    padding: 5px 20px;
+}
+
+
+/*css properties for content on nav bar*/
+.navigation ul{
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.navigation ul li{
+    position: relative;
+    float:left;
+}
+
+.navigation a{
+    font-size: 18px;
+    padding: 20px;
+    color:#8d8c80;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: block;
+}
+
+.navigation a:hover{
+    background-color: #8d8c80;
+    color: #FFFEF9;
+}
+
+.navigation .members{
+    position: absolute;
+    left:0;
+    width: 150px;
+    background: #fdfefbbf;
+    color: #FFFEF9;
+    display: none;
+}
+
+.members li{
+    width: 100%;
+    border-top: 1px solid #5a5950;
+}
+
+.navigation ul li:hover > ul{
+    display: initial;
+}
+
+#icon{
+    display: none;
+}
+
+header label{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #8d8c80;
+    cursor: pointer;
+    display:none;
+}
+
+/*css properties to make nav bar responsive*/
+@media(max-width:890px){
+    header{
+        padding:10px
+    }
+
+    header label{
+        display: initial;
+    }
+
+    .navigation{
+        position: absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background: #fdfefbbf;
+        border-top: 1px solid #5a5950;
+        display: none;
+}
+
+    .navigation ul li{
+        width: 100%;
+    }
+
+    .navigation .members{
+        position: relative;
+        width: 100%;
+    }
+    .navigation .members li{
+        background: #fdfefba4;
+    }
+
+    #icon:checked ~ .navigation{
+        display:inline;
+    }
+}
+
+
+/*css properties for background images*/
+.group-photo{
+    background-image: url("img-bg/about-1stbg.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in;
+}
+
+/*to change bg image when hovered*/
+.group-photo:hover{
+    background-image: url("img-bg/about-2ndbg.png");
+    width: 100%;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#bg-image{
+    background-image: url("img-bg/about-3rdbg.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*ABOUT section css properties*/
+.about{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.3fr 1.3fr;
+    grid-template-areas:
+        "space"
+        "info-img"
+        "info";
+}
+
+.space{
+    grid-area: space;
+    padding: 40px;
+    margin:0;
+}
+
+.info-img{
+    grid-area: info-img;
+}
+
+.info-img img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
+
+.info{
+    grid-area: info;
+    margin-top: 20px;
+}
+
+.info p{
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+    padding: 0px 20vw 0px 20vw;
+    color: #9ea096;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+/*to style text*/
+#italic{
+    font-style: italic;
+}
+
+#bold{
+    font-weight: 600;
+}
+
+/*to make ABOUT Section responsive*/
+@media only screen and (max-width:750px) {
+    .about {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr 0.1fr 0.1fr;
+        grid-template-areas:
+        "space"
+        "info-img"
+        "info";
+    }
+}
